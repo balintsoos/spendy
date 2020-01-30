@@ -11,10 +11,11 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
 body {
-  border-top: 3px solid #278664;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,10 +24,19 @@ body {
 .sp-logo {
   text-align: center;
   color: #278664;
-  padding: 50px;
+  padding: 30px;
   font-size: 2.5em;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+}
+
+.sp-recent-container {
+  padding: 30px;
+  color: #e1e1e1;
+}
+
+.sp-recent-container > #recent {
+  height: 300px;
+  border-top: 1px solid #278664;
+  border-bottom: 1px solid #278664;
 }
 
 .sp-add_spending-container {
@@ -44,8 +54,6 @@ body {
   text-align: center;
   font-size: 1.5em;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
 }
 
 .sp-add_spending-amount_input {
@@ -59,7 +67,4 @@ body {
   border-radius: 35px;
   text-align: center;
   font-size: 1.5em;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
 }
-
