@@ -1,2 +1,2 @@
 # spendy
-App for tracking my spendings
+PWA for tracking my spendings

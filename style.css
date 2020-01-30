@@ -1,0 +1,57 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #121212;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sp-logo {
+  text-align: center;
+  color: #278664;
+  padding: 50px;
+  font-size: 2.5em;;
+}
+
+.sp-add_spending-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-add_spending-amount_input {
+  padding: 10px;
+  border: 5px solid #278664;
+  background-color: #1f1f1f;
+  color: #e1e1e1;
+  border-radius: 35px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 1.4em;
+  outline: none;
+}
+
+.sp-add_spending-submit_button {
+  padding: 10px;
+  background-color: #278664;
+  color: #e1e1e1;
+  border-radius: 35px;
+  text-align: center;
+  font-size: 1.4em;
+}
+
