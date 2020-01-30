@@ -14,8 +14,6 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +23,9 @@ body {
   text-align: center;
   color: #278664;
   padding: 50px;
-  font-size: 2.5em;;
+  font-size: 2.5em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
 .sp-add_spending-container {
@@ -34,24 +34,35 @@ body {
   flex-direction: column;
 }
 
-.sp-add_spending-amount_input {
-  padding: 10px;
+.sp-add_spending-input {
+  padding: 15px;
   border: 5px solid #278664;
   background-color: #1f1f1f;
   color: #e1e1e1;
   border-radius: 35px;
-  margin: 20px 0;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.5em;
   outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.sp-add_spending-category_input {
+
+}
+
+.sp-add_spending-amount_input {
+  margin: 15px 0;
 }
 
 .sp-add_spending-submit_button {
-  padding: 10px;
+  padding: 15px;
   background-color: #278664;
   color: #e1e1e1;
   border-radius: 35px;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
