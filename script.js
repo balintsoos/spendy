@@ -7,6 +7,10 @@ const saveSpendings = spendings => {
   window.localStorage.setItem('spendings', JSON.stringify(spendings));
 }
 
+const resetSpendings = () => {
+  window.localStorage.clear();
+}
+
 const addSpending = spending => {
   const spendings = getSpendings();
   spendings.push(spending);
@@ -45,6 +49,6 @@ document.getElementById('submit').addEventListener('click', () => {
 });
 
 document.getElementById('reset').addEventListener('click', () => {
-  window.localStorage.clear();
+  resetSpendings();
   renderRecentSpendings();
 });
