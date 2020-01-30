@@ -23,8 +23,12 @@ const clearChildren = (parentElement) => {
   }
 }
 
+const getSpendingItemText = spending => {
+  return `${spending.amount} Ft - ${spending.category}`;
+}
+
 const renderRecentSpendings = () => {
-  const parentElement = document.getElementById('recent')
+  const parentElement = document.getElementById('recent');
   clearChildren(parentElement);
   const spendings = getSpendings();
   if (spendings.length === 0) {
@@ -34,7 +38,7 @@ const renderRecentSpendings = () => {
   }
   spendings.forEach(spending => {
     const element = document.createElement('div');
-    element.textContent = spending.amount;
+    element.textContent = getSpendingItemText(spending);
     parentElement.appendChild(element);
   });
 }
@@ -44,7 +48,10 @@ window.addEventListener('load', () => {
 });
 
 document.getElementById('submit').addEventListener('click', () => {
-  addSpending({ amount: 69 });
+  const category = document.getElementById('category').value;
+  const amount = document.getElementById('amount').value;
+  const date = new Date().toISOString();
+  addSpending({ category, amount, date });
   renderRecentSpendings();
 });
 
