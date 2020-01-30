@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  border-top: 3px solid #278664;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,7 +37,7 @@ body {
 
 .sp-add_spending-input {
   padding: 15px;
-  border: 5px solid #278664;
+  border: 3px solid #278664;
   background-color: #1f1f1f;
   color: #e1e1e1;
   border-radius: 35px;
@@ -45,10 +46,6 @@ body {
   outline: none;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-}
-
-.sp-add_spending-category_input {
-
 }
 
 .sp-add_spending-amount_input {
