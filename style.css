@@ -80,6 +80,23 @@ body {
   border-bottom: 1px solid var(--primary-color);
 }
 
+.sp-settings-container {
+  padding: var(--container-padding);
+  color: var(--primary-font-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-setting {
+  background-color: var(--primary-color);
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+.sp-setting#reset {
+  background-color: red;
+}
+
 .sp-add_spending-container {
   padding: var(--container-padding);
   display: flex;
