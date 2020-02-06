@@ -48,6 +48,7 @@ body {
 .sp-swipe-view {
   flex: 0 0 100%;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .sp-sum-container {
