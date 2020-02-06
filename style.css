@@ -1,7 +1,9 @@
 :root {
   --bg-color: #121212;
-  --font-color: #e1e1e1;
+  --primary-font-color: #e1e1e1;
+  --secondary-font-color: #7c7c7c;
   --primary-color: #278664;
+  --container-padding: 30px;
 }
 
 html, body {
@@ -30,24 +32,56 @@ body {
 .sp-logo {
   text-align: center;
   color: var(--primary-color);
-  padding: 30px;
+  padding: var(--container-padding);
   font-size: 2.5em;
 }
 
+.sp-swipe-view-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  width: 100%;
+  height: 400px;
+}
+
+.sp-swipe-view {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.sp-sum-container {
+  padding: var(--container-padding);
+  color: var(--primary-font-color);
+  text-align: center;
+}
+
+.sp-sum-category {
+  margin-bottom: 20px;
+}
+
+.sp-sum-value {
+  font-size: 1.7em;
+}
+
+.sp-sum-label {
+  color: var(--secondary-font-color);
+}
+
 .sp-recent-container {
-  padding: 30px;
-  color: var(--font-color);
+  padding: var(--container-padding);
+  color: var(--primary-font-color);
 }
 
 .sp-recent-container > #recent {
-  height: 100px;
+  height: 250px;
   overflow: scroll;
   border-top: 1px solid var(--primary-color);
   border-bottom: 1px solid var(--primary-color);
 }
 
 .sp-add_spending-container {
-  padding: 30px;
+  padding: var(--container-padding);
   display: flex;
   flex-direction: column;
 }
@@ -56,11 +90,15 @@ body {
   padding: 15px;
   border: 3px solid var(--primary-color);
   background-color: var(--bg-color);
-  color: var(--font-color);
+  color: var(--primary-font-color);
   border-radius: 35px;
   text-align: center;
   font-size: 1.5em;
   outline: none;
+}
+
+.sp-add_spending-input::placeholder {
+  color: var(--secondary-font-color);
 }
 
 .sp-add_spending-amount_input {
@@ -70,7 +108,7 @@ body {
 .sp-add_spending-submit_button {
   padding: 15px;
   background-color: var(--primary-color);
-  color: var(--font-color);
+  color: var(--primary-font-color);
   border-radius: 35px;
   text-align: center;
   font-size: 1.5em;

@@ -13,10 +13,26 @@
 </head>
 <body>
   <div class="sp-logo">$pendy</div>
-  <div class="sp-recent-container">
-    <div class="sp-recent-label">Recent</div>
-    <div id="recent"></div>
-    <div class="sp-recent-reset" id="reset">Reset</div>
+  <div class="sp-swipe-view-container">
+    <div class="sp-swipe-view sp-sum-container">
+      <div class="sp-sum-category">
+        <div class="sp-sum-value" id="sp-sum-daily-value">3 000 Ft</div>
+        <div class="sp-sum-label">daily</div>
+      </div>
+      <div class="sp-sum-category">
+        <div class="sp-sum-value" id="sp-sum-weekly-value">15 000 Ft</div>
+        <div class="sp-sum-label">weekly</div>
+      </div>
+      <div class="sp-sum-category">
+        <div class="sp-sum-value" id="sp-sum-monthly-value">240 000 Ft</div>
+        <div class="sp-sum-label">monthly</div>
+      </div>
+    </div>
+    <div class="sp-swipe-view sp-recent-container">
+      <div class="sp-recent-label">Recent</div>
+      <div id="recent"></div>
+      <div class="sp-recent-reset" id="reset">Reset</div>
+    </div>
   </div>
   <div class="sp-add_spending-container">
     <input class="sp-add_spending-input sp-add_spending-category_input" type="text" placeholder="Category" id="category" />
