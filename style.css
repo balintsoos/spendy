@@ -49,20 +49,26 @@ body {
   flex: 0 0 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .sp-sum-container {
-  padding: var(--container-padding);
   color: var(--primary-font-color);
   text-align: center;
 }
 
+.sp-sum-title {
+  margin-bottom: 35px;
+  font-size: 1.3em;
+}
+
 .sp-sum-category {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .sp-sum-value {
-  font-size: 1.7em;
+  font-size: 2em;
 }
 
 .sp-sum-label {
@@ -70,7 +76,6 @@ body {
 }
 
 .sp-recent-container {
-  padding: var(--container-padding);
   color: var(--primary-font-color);
 }
 
@@ -82,7 +87,6 @@ body {
 }
 
 .sp-settings-container {
-  padding: var(--container-padding);
   color: var(--primary-font-color);
   display: flex;
   flex-direction: column;
