@@ -12,3 +12,9 @@ export const downloadFile = (filename, data) => {
   anchor.click();
   anchor.remove();
 }
+
+export const addListItemTo = parentElement => textContent => {
+  const listItem = document.createElement('div');
+  listItem.textContent = textContent;
+  parentElement.appendChild(listItem);
+}

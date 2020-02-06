@@ -1,20 +1,15 @@
 import { getSpendings, getSpendingItemText, addSpending, resetSpendings } from './src/spendings.js';
-import { clearChildren, downloadFile } from './src/domHelpers.js';
+import { clearChildren, downloadFile, addListItemTo } from './src/domHelpers.js';
 
 const renderRecentSpendings = () => {
-  const parentElement = document.getElementById('recent');
-  clearChildren(parentElement);
+  const listElement = document.getElementById('recent');
+  const addToList = addListItemTo(listElement);
+  clearChildren(listElement);
   const spendings = getSpendings();
   if (spendings.length === 0) {
-    const emptyMessage = document.createElement('div');
-    emptyMessage.textContent = 'No spendings';
-    parentElement.appendChild(emptyMessage);
+    addToList('No spendings');
   }
-  spendings.forEach(spending => {
-    const element = document.createElement('div');
-    element.textContent = getSpendingItemText(spending);
-    parentElement.appendChild(element);
-  });
+  spendings.map(getSpendingItemText).forEach(addToList);
 }
 
 window.addEventListener('load', () => {
