@@ -1,5 +1,5 @@
 import { getSpendings, getSpendingItemText, addSpending, resetSpendings } from './src/spendings.js';
-import { clearChildren } from './src/domHelpers.js';
+import { clearChildren, downloadFile } from './src/domHelpers.js';
 
 const renderRecentSpendings = () => {
   const parentElement = document.getElementById('recent');
@@ -32,4 +32,12 @@ document.getElementById('submit').addEventListener('click', () => {
 document.getElementById('reset').addEventListener('click', () => {
   resetSpendings();
   renderRecentSpendings();
+});
+
+document.getElementById('download').addEventListener('click', () => {
+  const spendings = getSpendings();
+  const data = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(spendings))}`;
+  const date = new Date().toISOString();
+  const filename = `spendings-${date}.json`;
+  downloadFile(filename, data);
 });
