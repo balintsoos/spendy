@@ -1,31 +1,5 @@
-const getSpendings = () => {
-  const spendings = window.localStorage.getItem('spendings');
-  return spendings ? JSON.parse(spendings) : [];
-}
-
-const saveSpendings = spendings => {
-  window.localStorage.setItem('spendings', JSON.stringify(spendings));
-}
-
-const resetSpendings = () => {
-  window.localStorage.clear();
-}
-
-const addSpending = spending => {
-  const spendings = getSpendings();
-  spendings.push(spending);
-  saveSpendings(spendings);
-}
-
-const clearChildren = (parentElement) => {
-  while (parentElement.lastChild) {
-    parentElement.removeChild(parentElement.lastChild);
-  }
-}
-
-const getSpendingItemText = spending => {
-  return `${spending.amount} Ft - ${spending.category}`;
-}
+import { getSpendings, getSpendingItemText, addSpending, resetSpendings } from './src/spendings.js';
+import { clearChildren } from './src/domHelpers.js';
 
 const renderRecentSpendings = () => {
   const parentElement = document.getElementById('recent');
