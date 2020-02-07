@@ -1,5 +1,14 @@
-import { getSpendings, getSpendingItemText, addSpending, resetSpendings } from './src/spendings.js';
+import { getSpendings, getSpendingItemText, addSpending, resetSpendings, sumSpendingsUntil } from './src/spendings.js';
 import { clearChildren, downloadFile, addListItemTo } from './src/domHelpers.js';
+
+const renderSumValues = () => {
+  const dailySum = sumSpendingsUntil(new Date());
+  const weeklySum = sumSpendingsUntil(new Date());
+  const monthlySum = sumSpendingsUntil(new Date());
+  document.getElementById('sp-sum-daily-value').textContent = `${dailySum} Ft`;
+  document.getElementById('sp-sum-weekly-value').textContent = `${weeklySum} Ft`;
+  document.getElementById('sp-sum-monthly-value').textContent = `${monthlySum} Ft`;
+}
 
 const renderRecentSpendings = () => {
   const listElement = document.getElementById('recent');
@@ -9,24 +18,29 @@ const renderRecentSpendings = () => {
   if (spendings.length === 0) {
     addToList('No spendings');
   }
-  spendings.map(getSpendingItemText).forEach(addToList);
+  spendings.reverse().map(getSpendingItemText).forEach(addToList);
+}
+
+const render = () => {
+  renderSumValues();
+  renderRecentSpendings();
 }
 
 window.addEventListener('load', () => {
-  renderRecentSpendings();
+  render();
 });
 
 document.getElementById('submit').addEventListener('click', () => {
   const category = document.getElementById('category').value;
-  const amount = document.getElementById('amount').value;
+  const amount = document.getElementById('amount').value || 0;
   const date = new Date().toISOString();
   addSpending({ category, amount, date });
-  renderRecentSpendings();
+  render();
 });
 
 document.getElementById('reset').addEventListener('click', () => {
   resetSpendings();
-  renderRecentSpendings();
+  render();
 });
 
 document.getElementById('download').addEventListener('click', () => {

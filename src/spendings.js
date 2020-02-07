@@ -18,5 +18,8 @@ export const addSpending = spending => {
 }
 
 export const getSpendingItemText = spending => {
-  return `${spending.amount} Ft - ${spending.category}`;
+  const date = new Date(spending.date).toLocaleString('hu');
+  return `${spending.amount} Ft - ${spending.category} - ${date}`;
 }
+
+export const sumSpendingsUntil = () => 0;
