@@ -33,3 +33,7 @@ export const sumSpendingsUntil = date => {
   console.log(sum);
   return sum;
 };
+
+export const migrateSpendings = () => {
+  saveSpendings(getSpendings().map(spending => ({ ...spending, amount: parseInt(spending.amount) })));
+}

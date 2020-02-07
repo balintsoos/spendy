@@ -28,6 +28,7 @@ const render = () => {
 }
 
 window.addEventListener('load', () => {
+  migrateSpendings();
   render();
 });
 
