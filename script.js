@@ -1,10 +1,11 @@
 import { getSpendings, getSpendingItemText, addSpending, resetSpendings, sumSpendingsUntil } from './src/spendings.js';
 import { clearChildren, downloadFile, addListItemTo } from './src/domHelpers.js';
+import { today, weekAgo, monthAgo } from './src/date.js';
 
 const renderSumValues = () => {
-  const dailySum = sumSpendingsUntil(new Date());
-  const weeklySum = sumSpendingsUntil(new Date());
-  const monthlySum = sumSpendingsUntil(new Date());
+  const dailySum = sumSpendingsUntil(today());
+  const weeklySum = sumSpendingsUntil(weekAgo());
+  const monthlySum = sumSpendingsUntil(monthAgo());
   document.getElementById('sp-sum-daily-value').textContent = `${dailySum} Ft`;
   document.getElementById('sp-sum-weekly-value').textContent = `${weeklySum} Ft`;
   document.getElementById('sp-sum-monthly-value').textContent = `${monthlySum} Ft`;
@@ -32,7 +33,7 @@ window.addEventListener('load', () => {
 
 document.getElementById('submit').addEventListener('click', () => {
   const category = document.getElementById('category').value;
-  const amount = document.getElementById('amount').value || 0;
+  const amount = parseInt(document.getElementById('amount').value) || 0;
   const date = new Date().toISOString();
   addSpending({ category, amount, date });
   render();
