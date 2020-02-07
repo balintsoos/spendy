@@ -1,4 +1,11 @@
-import { getSpendings, getSpendingItemText, addSpending, resetSpendings, sumSpendingsUntil } from './src/spendings.js';
+import {
+  getSpendings,
+  getSpendingItemText,
+  addSpending,
+  resetSpendings,
+  sumSpendingsUntil,
+  migrateSpendings,
+} from './src/spendings.js';
 import { clearChildren, downloadFile, addListItemTo } from './src/domHelpers.js';
 import { today, weekAgo, monthAgo } from './src/date.js';
 

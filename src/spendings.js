@@ -30,7 +30,6 @@ export const sumSpendingsUntil = date => {
     sum += spendings[index].amount;
     index += 1;
   }
-  console.log(sum);
   return sum;
 };
 
