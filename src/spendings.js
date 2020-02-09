@@ -32,7 +32,3 @@ export const sumSpendingsUntil = date => {
   }
   return sum;
 };
-
-export const migrateSpendings = () => {
-  saveSpendings(getSpendings().map(spending => ({ ...spending, amount: parseInt(spending.amount) })));
-}
