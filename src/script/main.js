@@ -4,6 +4,8 @@ import {
   addSpending,
   resetSpendings,
   sumSpendingsUntil,
+  sumSpendingsByCategoryUntil,
+  getSpendingByCategoryItemText,
 } from './spendings.js';
 import { clearChildren, downloadFile, addListItemTo } from './domHelpers.js';
 import { today, weekAgo, monthAgo } from './date.js';
@@ -15,6 +17,17 @@ const renderSumValues = () => {
   document.getElementById('sp-sum-daily-value').textContent = `${dailySum} Ft`;
   document.getElementById('sp-sum-weekly-value').textContent = `${weeklySum} Ft`;
   document.getElementById('sp-sum-monthly-value').textContent = `${monthlySum} Ft`;
+}
+
+const renderSpentByCategory = () => {
+  const listElement = document.getElementById('spent-by-category');
+  const addToList = addListItemTo(listElement);
+  clearChildren(listElement);
+  const spendings = sumSpendingsByCategoryUntil(monthAgo());
+  if (spendings.length === 0) {
+    addToList('No spendings');
+  }
+  spendings.map(getSpendingByCategoryItemText).forEach(addToList);
 }
 
 const renderRecentSpendings = () => {
@@ -30,6 +43,7 @@ const renderRecentSpendings = () => {
 
 const render = () => {
   renderSumValues();
+  renderSpentByCategory();
   renderRecentSpendings();
 }
 

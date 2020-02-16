@@ -32,3 +32,19 @@ export const sumSpendingsUntil = date => {
   const amounts = getSpendingsUntil(date).map(spending => spending.amount);
   return sum(amounts);
 };
+
+export const sumSpendingsByCategoryUntil = date => {
+  const spendings = getSpendingsUntil(date);
+  const sumByCategory = {};
+  spendings.forEach(spending => {
+    if (!sumByCategory[spending.category]) {
+      sumByCategory[spending.category] = 0;
+    }
+    sumByCategory[spending.category] += spending.amount;
+  });
+  return Object.entries(sumByCategory);
+}
+
+export const getSpendingByCategoryItemText = sumByCategory => {
+  return `${sumByCategory[0]} - ${sumByCategory[1]} Ft`;
+}
