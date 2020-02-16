@@ -4,9 +4,9 @@ import {
   addSpending,
   resetSpendings,
   sumSpendingsUntil,
-} from './src/spendings.js';
-import { clearChildren, downloadFile, addListItemTo } from './src/domHelpers.js';
-import { today, weekAgo, monthAgo } from './src/date.js';
+} from './spendings.js';
+import { clearChildren, downloadFile, addListItemTo } from './domHelpers.js';
+import { today, weekAgo, monthAgo } from './date.js';
 
 const renderSumValues = () => {
   const dailySum = sumSpendingsUntil(today());

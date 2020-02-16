@@ -22,13 +22,13 @@ export const getSpendingItemText = spending => {
   return `${spending.amount} Ft - ${spending.category} - ${date}`;
 }
 
+export const sum = list => list.reduce((prev, curr) => prev + curr, 0);
+
+export const getSpendingsUntil = date => {
+  return getSpendings().filter(spending => date < new Date(spending.date));
+}
+
 export const sumSpendingsUntil = date => {
-  const spendings = getSpendings().reverse();
-  let sum = 0;
-  let index = 0;
-  while (spendings[index] && date < new Date(spendings[index].date)) {
-    sum += spendings[index].amount;
-    index += 1;
-  }
-  return sum;
+  const amounts = getSpendingsUntil(date).map(spending => spending.amount);
+  return sum(amounts);
 };
