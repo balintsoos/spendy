@@ -1,0 +1,19 @@
+{
+  "name": "spendy",
+  "version": "1.0.0",
+  "description": "PWA for tracking my spendings",
+  "main": "src/script/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balintsoos/spendy.git"
+  },
+  "author": "Balint Soos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/balintsoos/spendy/issues"
+  },
+  "homepage": "https://github.com/balintsoos/spendy#readme"
+}
