@@ -1,2 +1,2 @@
-# spendy
-tracking my spendings
+# :dollar: spendy
+> Tracking my spendings
